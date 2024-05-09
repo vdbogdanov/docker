@@ -1,3 +1,9 @@
+## Games
+
+### [factorio](games/factorio/)
+
+Your factorio server availiable on `34197` port.
+
 ## Services
 
 If you want use service with custom config, you should change .env file in folder with service.
@@ -55,9 +61,3 @@ Deploy pgAdmin on `http://<server_ip>:80` where `username = admin@github.com` an
 ### [vcenter]()
 
 Deploy vcsim - vcenter simulator in docker container `nimmis/vcsim`. If you want use it via HTTP, you should use official container. You can test connection on `https://<server_ip>:80/about`.
-
-## Games
-
-### [factorio](games/factorio/)
-
-Your factorio server availiable on `34197` port.
