@@ -1,36 +1,3 @@
-## Table of Contents
-
-- [Usage](#usage)
-- [Services](#services)
-	- [openvpn](#openvpn)
-	- [nginx](#nginx)
-	- [cmdbuild](#cmdbuild)
-	- [gitlab](#gitlab)
-	- [pgadmin](#pgadmin)
-	- [vcenter](#vcenter)
-- [Games](#games)
-	- [factorio](#factorio)
-
-## Usage
-
-Open folder with service:
-
-```
-cd compose-collection/services/<service_folder>
-```
-
-Configure service with .env file (optional):
-
-```
-nano .env
-```
-
-Start docker compose file:
-
-```
-docker compose up -d
-``` 
-
 ## Services
 
 If you want use service with custom config, you should change .env file in folder with service.
