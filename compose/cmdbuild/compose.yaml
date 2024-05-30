@@ -18,7 +18,7 @@ services:
 
   cmdbuild:
     image: trepz/cmdbuild:3.1.1
-    container_name: cmdbuild
+    container_name: cmdbuild_config
     restart: always
     environment:
       - DB_HOST=postgres
