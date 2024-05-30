@@ -1,5 +1,5 @@
-version: '3.8'
 services:
+
   mysql:
     image: mysql:latest
     container_name: marzban_db
@@ -45,6 +45,6 @@ services:
       - "1080/tcp"
       - "1080/udp"
     volumes:
-      - ./data:/var/lib/marzban
+      - ./data/config:/var/lib/marzban
     depends_on:
       - mysql

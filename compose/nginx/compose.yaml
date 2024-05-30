@@ -1,8 +1,8 @@
-version: '3.8'
 services:
-  nginx_pm:
+
+  proxy_manager:
     image: jc21/nginx-proxy-manager:latest
-    container_name: nginx_pm
+    container_name: proxy_manager
     restart: always
     network_mode: host
     expose:
@@ -10,5 +10,5 @@ services:
       - "81"
       - "443"
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - ./data/config:/data
+      - ./data/letsencrypt:/etc/letsencrypt

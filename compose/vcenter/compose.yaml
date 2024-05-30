@@ -1,5 +1,5 @@
-version: '3'
 services:
+
   vcsim:
     image: nimmis/vcsim
     container_name: vcsim

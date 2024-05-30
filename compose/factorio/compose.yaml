@@ -1,5 +1,5 @@
-version: '2'
 services:
+
   factorio:
     image: factoriotools/factorio:1.1.101
     container_name: factorio
@@ -9,4 +9,4 @@ services:
     expose:
      - "27015/tcp"
     volumes:
-     - ./server:/factorio
+     - ./data/config:/factorio
