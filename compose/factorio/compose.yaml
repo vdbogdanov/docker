@@ -1,5 +1,4 @@
 services:
-
   factorio:
     image: factoriotools/factorio:1.1.101
     container_name: factorio

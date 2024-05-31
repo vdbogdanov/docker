@@ -1,5 +1,4 @@
 services:
-
   openvpn:
     cap_add:
       - NET_ADMIN

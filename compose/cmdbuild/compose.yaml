@@ -1,5 +1,4 @@
 services:
-
   postgres:
     image: mdillon/postgis:9.5-alpine    
     container_name: cmdbuild_db
@@ -15,7 +14,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-
   cmdbuild:
     image: trepz/cmdbuild:3.1.1
     container_name: cmdbuild_config
