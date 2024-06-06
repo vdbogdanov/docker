@@ -12,7 +12,6 @@ services:
       - "1080"
       - "2053"
       - "2083"
-      - "1080"
       - "19284"
     volumes:
       - ./data/config:/var/lib/marzban
