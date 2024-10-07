@@ -1,0 +1,14 @@
+services:
+
+  proxy_manager:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: proxy_manager
+    restart: always
+    network_mode: host
+    expose:
+      - "80"
+      - "81"
+      - "443"
+    volumes:
+      - ./data/app:/data
+      - ./data/letsencrypt:/etc/letsencrypt

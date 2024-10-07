@@ -1,0 +1,11 @@
+services:
+  factorio:
+    image: factoriotools/factorio:1.1.101
+    container_name: factorio
+    restart: unless-stopped
+    ports:
+     - "34197:34197/udp"
+    expose:
+     - "27015/tcp"
+    volumes:
+     - ./data/app:/factorio

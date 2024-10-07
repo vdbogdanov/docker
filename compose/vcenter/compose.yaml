@@ -1,0 +1,8 @@
+services:
+
+  vcsim:
+    image: ghcr.io/vdbogdanov/vcenter-server:latest
+    container_name: vcsim
+    restart: always
+    ports:
+      - "8989:8989"
