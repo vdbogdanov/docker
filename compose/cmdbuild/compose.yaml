@@ -20,6 +20,10 @@ services:
     image: trepz/cmdbuild:3.1.1
     container_name: cmdbuild_app
     restart: always
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
     environment:
       - DB_HOST=cmdbuild_db
       - DB_PORT=5432
