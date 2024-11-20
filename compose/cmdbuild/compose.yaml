@@ -1,6 +1,6 @@
 services:
 
-  postgres:
+  cmdbuild_db:
     image: mdillon/postgis:9.5-alpine    
     container_name: cmdbuild_db
     restart: always
@@ -9,19 +9,19 @@ services:
     expose:
       - "5432"
     volumes:
-      - ./data/postgresql:/var/lib/postgresql/data
+      - vlme_cmdbuild_db:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
   
-  cmdbuild:
+  cmdbuild_app:
     image: trepz/cmdbuild:3.1.1
     container_name: cmdbuild_app
     restart: always
     environment:
-      - DB_HOST=postgres
+      - DB_HOST=cmdbuild_db
       - DB_PORT=5432
       - DB_NAME=cmdbuild
       - DB_TYPE=empty
@@ -34,3 +34,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+
+volumes:
+  vlme_cmdbuild_db:
+    name: vlme_cmdbuild_db
