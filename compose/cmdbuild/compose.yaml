@@ -3,7 +3,7 @@ services:
   cmdbuild_db:
     image: mdillon/postgis:9.5-alpine    
     container_name: cmdbuild_db
-    restart: always
+    restart: unless-stopped
     environment:
       - POSTGRES_PASSWORD=postgres
     expose:
@@ -19,7 +19,7 @@ services:
   cmdbuild_app:
     image: trepz/cmdbuild:3.1.1
     container_name: cmdbuild_app
-    restart: always
+    restart: unless-stopped
     ulimits:
       nofile:
         soft: 65536
