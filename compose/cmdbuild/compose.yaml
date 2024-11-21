@@ -1,7 +1,7 @@
 services:
 
   cmdbuild_db:
-    image: mdillon/postgis:9.5-alpine    
+    image: mdillon/postgis:9.5-alpine
     container_name: cmdbuild_db
     restart: always
     environment:
@@ -15,7 +15,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-  
+
   cmdbuild_app:
     image: trepz/cmdbuild:3.1.1
     container_name: cmdbuild_app
@@ -33,7 +33,7 @@ services:
       - CMDBUILD_PASSWORD=cmdbuild
       - POSTGRES_USERNAME=postgres
       - POSTGRES_PASSWORD=postgres
-    ports:  
+    ports:
       - "8080:8080"
     depends_on:
       cmdbuild_db:
