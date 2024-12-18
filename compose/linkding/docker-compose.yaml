@@ -1,0 +1,18 @@
+services:
+
+  linkding:
+    image: sissbruecker/linkding:latest
+    container_name: linkding
+    restart: always
+    environment:
+      - LD_DISABLE_BACKGROUND_TASKS=False
+      - LD_DISABLE_URL_VALIDATION=False
+      - LD_ENABLE_AUTH_PROXY=False
+    ports:
+      - "9090:9090"
+    volumes:
+      - storage_linkding:/etc/linkding/data
+
+volumes:
+  storage_linkding:
+    name: storage_linkding
