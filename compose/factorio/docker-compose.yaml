@@ -8,4 +8,8 @@ services:
     expose:
      - "27015/tcp"
     volumes:
-     - ./data/app:/factorio
+     - storage_factorio:/factorio
+
+volumes:
+  storage_factorio:
+    name: storage_factorio

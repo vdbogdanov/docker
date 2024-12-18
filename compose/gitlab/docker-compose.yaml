@@ -1,5 +1,4 @@
 services:
-
   gitlab:
     image: gitlab/gitlab-ce
     restart: always
@@ -15,7 +14,15 @@ services:
     expose:
       - "443"
     volumes:
-      - ./data/config:/etc/gitlab
-      - ./data/logs:/var/log/gitlab
-      - ./data/data:/var/opt/gitlab
+      - storage_gitlab_config:/etc/gitlab
+      - storage_gitlab_logs:/var/log/gitlab
+      - storage_gitlab_data:/var/opt/gitlab
     shm_size: 256m
+
+volumes:
+  storage_gitlab_config:
+    name: storage_gitlab_config
+  storage_gitlab_logs:
+    name: storage_gitlab_logs
+  storage_gitlab_data:
+    name: storage_gitlab_data

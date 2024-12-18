@@ -1,6 +1,5 @@
 services:
-
-  postgresql:
+  confluence_db:
     image: postgres:15.7
     container_name: confluence_db
     restart: always
@@ -11,9 +10,8 @@ services:
     expose:
       - "5432"
     volumes:
-      - ./data/postgresql:/var/lib/postgresql/data
-  
-  confluence:
+      - storage_confluence_db:/var/lib/postgresql/data
+  confluence_app:
     image: atlassian/confluence:8.9.1
     container_name: confluence_app
     restart: always
@@ -29,6 +27,12 @@ services:
       - "8090:8090"
       - "8091:8091"
     volumes:
-      - ./data/app:/var/atlassian/application-data/confluence
+      - storage_confluence_app:/var/atlassian/application-data/confluence
     depends_on:
       - postgresql
+
+volumes:
+  storage_confulence_db:
+    name: storage_confluence_db
+  storage_confulence_app:
+    name: storage_confluence_app

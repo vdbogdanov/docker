@@ -1,5 +1,4 @@
 services:
-
   proxy_manager:
     image: jc21/nginx-proxy-manager:latest
     container_name: proxy_manager
@@ -10,5 +9,11 @@ services:
       - "81"
       - "443"
     volumes:
-      - ./data/app:/data
-      - ./data/letsencrypt:/etc/letsencrypt
+      - storage_proxy_manager:/data
+      - storage_letsencrypt:/etc/letsencrypt
+
+volumes:
+  storage_proxy_manager:
+    name: storage_proxy_manager
+  storage_letsencrypt:
+    name: storage_letsencrypt

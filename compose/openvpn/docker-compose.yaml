@@ -1,5 +1,4 @@
 services:
-
   openvpn:
     cap_add:
       - NET_ADMIN
@@ -9,4 +8,8 @@ services:
     ports:
       - "1194:1194/udp"
     volumes:
-      - ./data/app:/etc/openvpn
+      - storage_openvpn:/etc/openvpn
+
+volumes:
+  storage_openvpn:
+    name: storage_openvpn

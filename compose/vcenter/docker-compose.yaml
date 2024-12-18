@@ -1,5 +1,4 @@
 services:
-
   vcsim:
     image: ghcr.io/vdbogdanov/vcenter-server:latest
     container_name: vcsim
